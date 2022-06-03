@@ -7,7 +7,7 @@ function run(){
 	local LANG="$1"
 	local DIR="$2"
 	local OUT_SUFFIX="$3"
-	./bin/cdxgen -t $LANG -o "$DIR/cdx$OUT_SUFFIX.out.xml" -r $DIR
+	./bin/cdxgen --deterministic-for-tests -t $LANG -o "$DIR/cdx$OUT_SUFFIX.out.xml" -r $DIR
 }
 
 function main(){
