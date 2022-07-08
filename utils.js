@@ -749,7 +749,7 @@ const getPyMetadata = async function (pkgList, fetchIndirectDeps) {
       }
     }
   }
-  if (indirectDeps.length && fetchIndirectDeps) {
+  if (fetchIndirectDeps) {
     if (DEBUG_MODE) {
       console.log("Fetching metadata for indirect dependencies");
     }
