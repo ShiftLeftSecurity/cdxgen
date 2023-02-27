@@ -467,7 +467,7 @@ test("get repo license", async () => {
   });
   expect(license).toEqual({
     id: "Apache-2.0",
-    url: "https://github.com/AppThreat/cdxgen/blob/master/LICENSE",
+    url: "https://github.com/CycloneDX/cdxgen/blob/master/LICENSE",
   });
 
   license = await utils.getRepoLicense("https://cloud.google.com/go", {
