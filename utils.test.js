@@ -467,7 +467,7 @@ test("get repo license", async () => {
   });
   expect(license).toEqual({
     id: "Apache-2.0",
-    url: "https://github.com/AppThreat/cdxgen/blob/master/LICENSE",
+    url: "https://github.com/CycloneDX/cdxgen/blob/master/LICENSE",
   });
 
   license = await utils.getRepoLicense("https://cloud.google.com/go", {
@@ -661,6 +661,15 @@ test("parseYarnLock", async () => {
     group: "apollo",
     name: "client",
     version: "3.2.5",
+  });
+
+  deps = await utils.parseYarnLock("./test/data/yarn_locks/yarn-light.lock");
+  expect(deps.length).toEqual(315);
+  expect(deps[0]).toEqual({
+    _integrity: "sha256-7c24bbbff0714b45b593680b8b76b2af93114a29",
+    group: "actions",
+    name: "artifact",
+    version: "0.6.1",
   });
 });
 
