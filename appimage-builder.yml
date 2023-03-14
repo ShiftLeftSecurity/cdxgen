@@ -1,14 +1,15 @@
 version: 1
 script:
   # Remove any previous build
-  - rm -rf AppDir  | true
+  - rm -rf AppDir
   # Make usr and icons dirs
   - mkdir -p AppDir/usr/{src,bin}
   - mkdir -p AppDir/usr/share/{metainfo,icons}
-  - cp appimage-reqs.sh tools_config AppDir/usr/src -r
-  - cp tools_config/io.shiftleft.cdxgen.appdata.xml AppDir/usr/share/metainfo/
-  - chmod +x AppDir/usr/src/appimage-reqs.sh && AppDir/usr/src/appimage-reqs.sh AppDir
-  - npm install --only=production --no-save --prefix AppDir/usr/local/lib yarn @appthreat/cdxgen @microsoft/rush
+  - cp -r appimage-reqs.sh tools_config AppDir/usr/src
+  - cp tools_config/io.shiftleft.cdxgen.appdata.xml AppDir/usr/share/metainfo
+  - bash AppDir/usr/src/appimage-reqs.sh AppDir
+  # install ourselves instead of pushed package for cdxgen; install plugins as well; do not use symlinks
+  - npm install --only=production --no-save --prefix AppDir/usr/local/lib --install-links . yarn @appthreat/cdxgen-plugins-bin @microsoft/rush
   - python3 -m pip install --no-cache-dir --ignore-installed --prefix=/usr --root=AppDir pipenv
 
 AppDir:
