@@ -91,7 +91,7 @@ let options = {
   deterministicForTests: args.deterministicForTests,
 };
 
-let filePath = args._[0] || ".";
+let filePath = path.resolve(args._[0] || ".");
 
 /**
  * Method to start the bom creation process

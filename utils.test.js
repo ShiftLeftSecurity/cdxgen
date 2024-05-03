@@ -188,23 +188,23 @@ test("get py metadata", async () => {
   const data = await utils.getPyMetadata([
     {
       group: "",
-      name: "Flask",
-      version: "1.1.0",
+      name: "Django",
+      version: "5.0.4",
     },
     false,
   ]);
   expect(data).toEqual([
     {
       _integrity:
-        "sha256-a31adc27de06034c657a8dc091cc5fcb0227f2474798409bff0e9674de31a026",
-      description: "A simple framework for building complex web applications.",
+        "sha256-916423499d75d62da7aa038d19aef23d23498d8df229775eb0a6309ee1013775",
+      description: "A high-level Python web framework that encourages rapid development and clean, pragmatic design.",
       group: "",
       homepage: {
-        url: "https://palletsprojects.com/p/flask",
+        url: "https://www.djangoproject.com/",
       },
       license: "BSD-3-Clause",
-      name: "Flask",
-      version: "1.1.0",
+      name: "Django",
+      version: "5.0.4",
     },
   ]);
 });
@@ -457,7 +457,7 @@ test("get repo license", async () => {
     "https://github.com/ShiftLeftSecurity/sast-scan"
   );
   expect(license).toEqual({
-    id: "GPL-3.0-or-later",
+    id: "Apache-2.0",
     url: "https://github.com/ShiftLeftSecurity/sast-scan/blob/master/LICENSE",
   });
 
