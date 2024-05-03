@@ -457,7 +457,7 @@ test("get repo license", async () => {
     "https://github.com/ShiftLeftSecurity/sast-scan"
   );
   expect(license).toEqual({
-    id: "GPL-3.0-or-later",
+    id: "Apache-2.0",
     url: "https://github.com/ShiftLeftSecurity/sast-scan/blob/master/LICENSE",
   });
 
